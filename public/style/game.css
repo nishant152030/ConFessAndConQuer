@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image:url('./table.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #FFFFFF; 
+    background-size: 60%; 
+    background-attachment: fixed;
+    min-height: 100vh;   
+}
+
+.title {
+    margin: 10px;
+    font-size: 40px;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+
+.pointer-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#pointer {
+    height: 400px;
+    border-radius: 50%;
+    transition: transform 3000ms ease-in-out;
+}
+
+.btn-wrap {
+    text-align: center;
+}
+
+.btn {
+    width: 150px;
+    color: white;
+    font-size: 20px;
+    height: 60px;
+    background-color: rgb(53, 3, 3);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px #ccc;
+    cursor: pointer;
+}
+
+.circle-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-element {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    font-weight: bold;
+}
+
+#chatBox {
+    /* display: flex; */
+    position: absolute;
+    /* bottom: 0; */
+    /* left:1400px; */
+    border: 2px solid grey;
+    background-color: black;
+    height: 89vh;
+    width: 300px;
+    top:10px;
+    right: 10px;
+}
+
+#chatBox > div {
+    font-size: 25px;
+    font-family: fantasy;
+    color: #FFFFFF;
+}
+.scrollable-div {
+    overflow-y: auto; /* Add vertical scrollbar */
+     /* Set a maximum height to limit scrolling */
+  }
+
+#comment{
+    position: absolute;
+    bottom: 0;
+    width: 250px;
+    height: 30px;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#sendbtn{
+    position: absolute;
+    bottom: 0;
+    left: 250px;
+    width: 50px;
+    height: 35px;
+    font-size: 20px;
+}
+

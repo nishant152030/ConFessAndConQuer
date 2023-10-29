@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='style/game.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/main.css'>
+    <title>Game</title>
+    
+</head>
+<body>
+    
+    <h1 class="title">Truth & Dare</h1>
+    <div class="circle-container">
+        <!-- <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.malouffurniture.com%2Fitem%2Fconsulate-hortense-round-dining-table%2F831687642&psig=AOvVaw2twLJqlyx2Se9iF43O1fvi&ust=1698623699467000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPClzt34mYIDFQAAAAAdAAAAABAE"> -->
+        <div id="1" class="circle-element" style="transform: rotate(30deg) translate(380px) rotate(-30deg); font-size: 20px;">laxmi</div>
+        <div id="2" class="circle-element" style="transform: rotate(150deg) translate(380px) rotate(-150deg); font-size: 20px;">Gangubai</div>
+        <div id="3" class="circle-element" style="transform: rotate(90deg) translate(380px) rotate(-90deg); font-size: 20px;">kantabai</div>
+        <div id="4" class="circle-element" style="transform: rotate(210deg) translate(350px) rotate(-210deg); font-size: 20px;">baburao</div>
+        <div id="5" class="circle-element" style="transform: rotate(270deg) translate(300px) rotate(-270deg); font-size: 20px;">Shyam</div>
+        <div id="6" class="circle-element" style="transform: rotate(330deg) translate(350px) rotate(-330deg); font-size: 20px;">Sunudar</div>
+        <div class="pointer-wrap">
+            <img id="pointer" src="./style/Image.png" alt="pointer" />
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <button class="btn" id="btn" value="Spin">Spin</button>
+    </div>
+    <button id="join-btn">Join Stream</button>
+    <div id="stream-wrapper">
+        <div id="video-streams">
+        </div>
+        <div id="stream-controls">
+            <button id="leave-btn">Leave Stream</button>
+            <button id="mic-btn">Mic On</button>
+            <button id="camera-btn">Camera on</button>
+        </div>
+    </div>
+    <div id="chatBox" class="scrollable-div">
+        <input type="text" id="comment">
+        <button id="sendbtn" value="send">Send</button>
+    </div>
+    <script src="AgoraRTC_N-4.7.3.js"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="frontend.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

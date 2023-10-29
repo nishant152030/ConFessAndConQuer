@@ -1,0 +1,155 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    border-radius: 10px ;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    /* background-image: url('Screenshot_250994-203.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; */
+  background-color: rgb(197, 91, 91);
+  
+  }
+  
+  .container {
+    display: block;
+    text-align: center;
+    background-color: #e3d3d346;
+    padding: 2%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(236, 218, 218);
+    margin: auto;
+    margin-top: 3%;
+    max-width: 400px;
+  }
+  
+  .label {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    padding: 2%;
+    margin: 2%;
+  }
+  
+  .input {
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    /* padding-right: auto;
+    padding-left: auto; */
+    /* margin: 10px 0; */
+    border: 1px solid #833232;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    width: 50%;
+    padding: 5%;
+    margin-top: 4%;
+    margin-bottom: 0px;
+    background-color: #20b1ac;
+    color: #fff;
+    border: none;
+    border-radius: 60px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .move {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 600px) {
+    .container {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    
+    .input, .btn {
+      width: 100%;
+      
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .container {
+      padding: 10px;
+    }
+  }
+  
+  
+
+        /* Base Styles for the "start" button */
+#start {
+  background-color: #00d2d9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Add a hover effect with a transition */
+/* #start:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+} */
+
+/* Define a simple animation for the "Login" button */
+/* @keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+/* Apply the animation to the "start" button */
+#start.animation {
+  animation: buttonPulse 2s infinite;
+}
+
+h1{
+  font-size: 50px;
+  font-family:'Lobster';
+}
+
+.btn:hover{
+  
+  animation: move 2s;
+}
+@keyframes move {
+  0%{
+    /* padding: 2%; */
+  background-color: rgba(184, 175, 44, 0.711);
+  }
+
+  50%{
+    /* padding: 7%; */
+  background-color: rgba(152, 194, 46, 0.411);
+  }
+ 100%{
+  /* padding: 5%; */
+  background-color: rgba(33, 220, 183, 0.619);
+ } 
+}
+
+a{
+  font-size: 20px;
+  margin : 70px;
+  padding: 20px;
+}

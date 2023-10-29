@@ -1,0 +1,65 @@
+/* Center the button using flexbox */
+body {
+    /* background-image: url("/public/Screenshot/430851.jpg"); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('Screenshot_250994-203.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Base Styles for the "Start Game" button */
+  #Start {
+    background-color: #9e19d7;
+    color: #160707;
+    padding: 10px 20px;
+    border: none;
+    width: 15%;
+    height: 15%;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Add a hover effect with a transition */
+  #Start:hover {
+    background-color: #0056b3;
+    transform: scale(1.50);
+  }
+  
+  /* Define a simple animation for the "Start Game" button */
+  @keyframes buttonPulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Apply the animation to the "Start Game" button */
+  #Start.animation {
+    animation: buttonPulse 2s infinite;
+  }
+  
+  /* Add a background image to a div with the class "background-image" */
+/* body {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZhc0V5Vo1egUlDh-divb8RbV-eO_1H4JrRg&usqp=CAU");
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 100%; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    opacity: 0.8; 
+  } */
+  

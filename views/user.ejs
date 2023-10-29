@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User page</title>
+    <link rel="stylesheet" type="text/css" href="/styleuser.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Let's Begin</h1>
+    <button id="createRoom">Create Room</button>
+    <button id="joinRoom">Join Room</button>
+    <div id="roomIdDisplay"></div>
+    
+    <button class="logout"><a href="/logout">Log Out</a></button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const ul = document.querySelector("ul");
+      const getUsers = async () => {
+        const res = await fetch("/api/auth/getUsers");
+        const data = await res.json();
+        data.user.map((mappedUser) => {
+          if (mappedUser.username !== "admin") {
+            let li = `<li> <b>Username</b> => ${mappedUser.username} <br> <b>Role</b> => ${mappedUser.role} </li>`;
+            ul.innerHTML += li;
+          } else {
+            return null;
+          }
+        });
+      };
+      getUsers();
+
+      const editRole = document.querySelectorAll(".edit");
+      const deleteUser = document.querySelector(".delete");
+      editRole.forEach((button, i) => {
+        button.addEventListener("click", async () => {
+          display.textContent = "";
+          const id = data.user[i + 1].id;
+          const res = await fetch("/api/auth/update", {
+            method: "PUT",
+            body: JSON.stringify({ role: "admin", id }),
+            headers: { "Content-Type": "application/json" },
+          });
+          const dataUpdate = await res.json();
+          if (res.status === 400 || res.status === 401) {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            return (display.textContent = `${dataUpdate.message}. ${
+              dataUpdate.error ? dataUpdate.error : ""
+            }`);
+          }
+          location.assign("/admin");
+        });
+      });
+
+      const socket = io();
+
+      document.getElementById("createRoom").addEventListener("click", () => {
+        const roomCode = Math.random().toString(36).substring(7);
+        socket.emit("createRoom", roomCode);
+      });
+
+      document.getElementById("joinRoom").addEventListener("click", () => {
+        const roomCode = prompt("Enter the room code:");
+        if (roomCode) {
+          const playerId = Math.random().toString(36).substring(7);
+          socket.emit("joinRoom", roomCode, playerId);
+        }
+      });
+
+      socket.on("roomCreated", (roomCode) => {
+        document.getElementById(
+          "roomIdDisplay"
+        ).textContent = `Room created with code: ${roomCode}`;
+      });
+
+      socket.on("roomExists", (roomCode) => {
+        alert(`Room with code ${roomCode} already exists.`);
+      });
+      let a = Math.random();
+      socket.on("roomJoined", (roomCode) => {
+        alert(`Joined room with code: ${roomCode}`);
+        window.location.href = "/start";
+      });
+
+      socket.on("roomNotFound", (roomCode) => {
+        alert(`Room with code ${roomCode} not found.`);
+      });
+
+      socket.on("playerJoined", (playerId) => {
+        console.log(`Player ${playerId} has joined the room.`);
+      });
+    </script>
+  </body>
+</html>
