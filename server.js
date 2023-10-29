@@ -82,7 +82,7 @@ function joinRoom(roomCode, playerId) {
 
 const players = {}
 const comments = []
-const names = ["laxmi", "kantabai", "Gangubai" , "baburao", "Shyam", "Sunudar"]
+const names = ["Nishant", "Niharika", "Pukhraj" , "Bhavdeep", "Nisha", "jiya"]
 
 let angle=0;
 let i=0;
