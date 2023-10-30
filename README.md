@@ -10,11 +10,11 @@ This is inspired by real Truth and Dare game.
 ## Face Recognition Model
 The face recognition model is able to detect faces by capturing image. The model is not currently integrated with the project because of limited time.
 To run the model:
--Run the app.py
--Go on index.html
--Click on Recognise button on webpage 
--The image is compared with image stored in loginpics folder
--Then it returns the output in terminal
+- Run the app.py
+- Go on index.html
+- Click on Recognise button on webpage 
+- The image is compared with image stored in loginpics folder
+- Then it returns the output in terminal
 
 ## Dependencies
 - Agora SDK
